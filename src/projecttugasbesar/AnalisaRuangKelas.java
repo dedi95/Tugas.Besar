@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.io.*;
 import java.lang.*;
 
-public class AnalisaRuangKelas {
+public class AnalisaRuangKelas extends ProjectTugasBesar {
     Scanner input = new Scanner(System.in);
     ProjectTugasBesar kelas = new ProjectTugasBesar();
     
@@ -57,128 +57,56 @@ public class AnalisaRuangKelas {
     }
     
    
-    public void DataKelas() {
-    
-    System.out.println("Jumlah Stop Kontak : ");
-    int JumlahStopKontak = input.nextInt();
-    kelas.setJumlahStopKontak(JumlahStopKontak);    
-    System.out.println("Kondisi Stop Kontak : ");
-    String KondisiStopKontak = input.next();
-    kelas.setKondisiStopKontak(KondisiStopKontak);
-    System.out.println("Posisi Stop Kontak : ");
-    String PosisiStopKontak = input.next();
-    kelas.setPosisiStopKontak(PosisiStopKontak);
-    
-    if (kelas.getJumlahStopKontak() > 2 && kelas.getKondisiStopKontak()
-        .equals("Bagus") && kelas.getPosisiStopKontak().equals("Belakang")) {
-            return; }
-    else {
-    }
-    
-    System.out.println("Jumlah Kabel LCD : ");
-    int JumlahKabelLCD = input.nextInt();
-    kelas.setJumlahKabelLCD(JumlahKabelLCD);
-    System.out.println("Kondisi Kabel LCD : ");
-    String KondisiKabelLCD = input.next();
-    kelas.setKondisiKabelLCD(KondisiKabelLCD);
-    System.out.println("Posisi Kabel LCD : ");
-    String PosisiKabelLCD = input.next();
-    kelas.setPosisiKabelLCD(PosisiKabelLCD);
-    
-    if (kelas.getJumlahKabelLCD() >=2 && kelas.getKondisiKabelLCD()
-        .equals("Sippp") && kelas.getPosisiKabelLCD().equals("Depan")) {
-        return;   }
-    else {
-    }
+    public String KenyamananRuangKelas() {
+    System.out.print("Kebisingan : ");
+    String Kebisingan = input.next();
+    kelas.setKebisingan(Kebisingan);
+    kelas.AnalisaKebisingan();
+    System.out.print("Bau : ");
+    String Bau = input.next();
+    kelas.setBau(Bau);
+    kelas.AnalisaBau();
+    System.out.print("Kebocoran : ");
+    String Kebocoran = input.next();
+    kelas.setKebocoran(Kebocoran);
+    kelas.AnalisaKebocoran();
+    System.out.print("Kerusakan : ");
+    String Kerusakan = input.next();
+    kelas.setKerusakan(Kerusakan);
+    kelas.AnalisaKerusakan();
+    System.out.print("Keausan : ");
+    String Keausan = input.next();
+    kelas.setKeausan(Keausan);
+    kelas.AnalisaKeausan();
+    return null;
 
-    System.out.println("Jumlah Kipas : ");
-    int JumlahKipas = input.nextInt();
-    kelas.setJumlahKipas(JumlahKipas);
-    System.out.println("Kondisi Kipas : ");
-    String KondisiKipas = input.next();
-    kelas.setKondisiKipas(KondisiKipas);
-    System.out.println("Posisi Kipas : ");
-    String PosisiKipas = input.next();
-    kelas.setPosisiKipas(PosisiKipas);
-    System.out.println("Jumlah Lampu");
-    int JumlahLampu = input.nextInt();
-    kelas.setJumlahLampu(JumlahLampu);
-    System.out.println("Kondisi Lampu : ");
-    String KondisiLampu = input.next();
-    kelas.setKondisiLampu(KondisiLampu);
-    System.out.println("Posisi Lampu : ");
-    String PosisiLampu = input.next();
-    kelas.setPosisiLampu(PosisiLampu);
+}
+    public String cetakNyamanKelas(){
+        return null;
         
-    if(kelas.getJumlahLampu()>=5 && kelas.getKondisiLampu()
-       .equals("Bagus") && kelas.getPosisiLampu().equals("Atas")) {
-        return; }
-    else {
     }
-
-    if (kelas.getJumlahKipas()>=3 && kelas.getKondisiKipas()
-        .equals("Bagus") && kelas.getPosisiKipas().equals("Atas")) {
-        return; }
-    else {
-    }
-
-    System.out.println("Jumlah AC : ");
-    int JumlahAC = input.nextInt();
-    kelas.setJumlahAC(JumlahAC);
-    System.out.println("Kondisi AC : ");
-    String KondisiAC = input.next();
-    kelas.setKondisiAC(KondisiAC);
-    System.out.println("Posisi AC : ");
-    String PosisiAC = input.next();
-    kelas.setPosisiAC(PosisiAC);
+    
+    public void Keamananruangkelas() {
+    System.out.print("Kekokohan : ");
+    String Kekokohan = input.next();
+    kelas.setKekokohan(Kekokohan);
+    kelas.AnalisaKekokohan();
+    System.out.print("Kunci Pintu dan Jendela : ");
+    String KunciPintuJendela = input.next();
+    kelas.setKunciPintuJendela(KunciPintuJendela);
+    kelas.AnalisaKunciPintuJendela();
+    System.out.print("Bahaya : ");
+    String Bahaya = input.next();
+    kelas.setBahaya(Bahaya);
+    kelas.AnalisaKeamanan();
+    
+}
+    
+    public void cetakAmanKelas() {
         
-    }    
-    public void cetakDataKelas() {
     }
     
-    public void LingkunganRuangKelas() {
-        System.out.println("Kondisi Lantai : ");
-        String KondisiLantai = input.next();
-        kelas.setKondisiLantai(KondisiLantai);
-        System.out.println("Kondisi Dinding : ");
-        String KondisiDinding = input.next();
-        kelas.setKondisiDinding(KondisiDinding);
-        System.out.println("Kondisi Atap : ");
-        String KondisiAtap = input.next();
-        kelas.setKondisiAtap(KondisiAtap);
-        System.out.println("Kondisi Pintu : ");
-        String KondisiPintu = input.next();
-        kelas.setKondisiPintu(KondisiPintu);
-        System.out.println("Kondisi Jendela : ");
-        String KondisiJendela = input.next();
-        kelas.setKondisiJendela(KondisiJendela);
-
-    if(kelas.getKondisiLantai().equals("Bersih") && kelas.getKondisiDinding()
-        .equals("Bersih") && kelas.getKondisiAtap().equals("Bersih") && kelas.getKondisiAtap()
-        .equals("Bersih") && kelas.getKondisiPintu().equals("Bersih") && kelas.getKondisiJendela().equals("Bersih")) {
-        return; }
-    else {
-    }
-     
-  }
-    public void KebersihanRuangKelas() {
-        System.out.println("Sirkulasi Udara : ");
-        String SirkulasiUdara = input.next();
-        kelas.setSirkulasiUdara(SirkulasiUdara);
-        System.out.println("Pencahayaan : ");
-        int Pencahayaan = input.nextInt();
-        kelas.setPencahayaan(Pencahayaan);
-        System.out.println("Kelembapan : ");
-        int Kelembapan = input.nextInt();
-        kelas.setKelembapan(Kelembapan);
-        System.out.println("Suhu(Celcius) : ");
-        int SuhuCel = input.nextInt();
-        kelas.setSuhuCel(SuhuCel);
+    public void cetakSemuaData(){
         
-        System.out.println("MAAF YANG METHOD INI DAN SETERUSNYA MASIH KAMI KERJAKAN. TERIMAKASIH");
-  }
-    
-    
-    
-    
+    }
 }
